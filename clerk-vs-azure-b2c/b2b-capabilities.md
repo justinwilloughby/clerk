@@ -1,0 +1,9 @@
+# B2B Capabilities
+
+## Azure AD B2C
+
+Despite the name "B2C", this product was able to support B2B use cases. You can setup arbitrary OIDC providers, you can connect via SAML to outside business partners and have either SP or IdP initiated flows. It's a user store with customizable flows so you can construct it to support many many use cases. Where this product was lacking in the B2B catagory, and where I think Clerk shines is in external user management capabilities. The only native UI to manage users is the Azure Portal and there is no fine grain control over what users you can see if you have access to the portal so you wouldn't want your business partners in there messing around. In most cases where we had B2B use cases we had to build a user admin dashboard ourselves, or add functionality into an existing one and layer in the permissions that way and you can use the Microsoft Graph API to manage the users programatically.
+
+## Clerk
+
+With Organizations, all the problems B2C had in B2B scenarios goes away. You can create any number of organizations for your app, and those organizations can have any number of members. There's a customized dashboard for managing those members that you can delegate to someone at the other business to manage. There are role and permissions management capabilities in a nice GUI which B2C could do but it wasn't as nice a setup. You can create and manage organizations through the dashboard, or you can do it programatically via the API. You can also do manual or automated invitations based on a user's domain. Organizations is a huge feature and I think it will win over lots of people with how easy you can manage your B2B relationships and access.

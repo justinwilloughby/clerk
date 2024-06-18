@@ -1,0 +1,3 @@
+# Clerk VS Azure AD B2C
+
+I've worked with Azure AD B2C for several years, deployed it and migrated users and apps to it many many times, and I consider myself an expert in the platform. I've been learning Next.js and found Clerk when I was looking to add authentication and authorization to my projects and fell in love with it. This is a collection of documents I've written comparing my experience with both platforms, the setup, use, customization options, etc.

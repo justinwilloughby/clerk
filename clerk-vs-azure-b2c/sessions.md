@@ -1,0 +1,9 @@
+# Sessions
+
+## Azure AD B2C
+
+Sessions can be configured through custom policies. You can scope them to a specific app or to your whole tenant. By default your session is configured to be scoped at the tenant, and the session lifetime is set to be a rolling session where the session timeout is refreshed on every interaction with the IdP and the session lifetime cannot be set to more than 24 hours so after 24 hours of inactivity you're going to have to authenticate again unless you configure the Keep Me Signed In feature which creates a persistant cookie that can be set anywhere from 1 to 90 days.
+
+## Clerk
+
+Sessions are also configurable here but it's interesting that the defaults are different. The Clerk default seems to be an absolute session that defaults to 7 days. It's not persistent so when the quit your browser and open back up to the page, you must reauthenticate. It's also not rolling, so it doesn't refresh when you perform another action against the IdP. I don't see a way to create a persistent cookie, which is honestly okay with me because of the security concerns. You can customize the session cookie claims in Clerk and B2C. Lastly, Clerk supports multi session applications, so you can have multiple users authenticated to the app on the same browser, which to my knowledge B2C does not support. Very cool. You can have sessions support multiple applications via satelite application setup, but it's limited in that you need to auth with the primary domain first and then you're good for the other applications. It's not as flexible as tenant wide session tokens like Azure AD B2C has and is likely due to apps having distinct user populations instead of a meta directory of users for all applications like Azure AD B2C.
